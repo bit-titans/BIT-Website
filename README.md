@@ -1,5 +1,5 @@
 # BIT-Website
-
+## A simple college website
 ### Dependecies:-
 1) Node.js for static server
 2) http-server ( npm install http-server -g )
