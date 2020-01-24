@@ -66,11 +66,33 @@
      4. To encourage graduates to imbibe professional ethics and soft skills. </p>
     <h3>Program Specific Outcomes</h3>
     <p> 1: The graduates of the program will have the ability to build software products   by applying theoretical concepts   and programming skills.<br>
-     2: The graduates of the program will have the ability to pursue higher studies and Research in the modern computing era.</p>						
+     2: The graduates of the program will have the ability to pursue higher studies and Research in the modern computing era.</p>	
+     
+                                    <!-- Faculty-->   
+                                  <div class="section-heading mt-30">
+                                    <h5>Faculty</h5>
+                                </div>
+                                {% for fac in facs %}
+                                <!-- Single Team Member -->
+                                <a href="#" >
+                                <div class="single-team-member d-flex align-items-center">
+                                    <div class="team-member-thumbnail">
+                                        <img src="http://localhost:8080/faculty/{{fac[0]}}.jpg" alt="">
+                                        
+                                    </div>
+                                    <div class="team-member-content">
+                                        <h6>{{fac[1]}}</h6>
+                                        <span>{{fac[2]}}</span>
+                                        Qualification:-{{fac[3]}}<br>
+                                           Email:- <a href="mailto:{{fac[4]}}" style="color: blue;">{{fac[4]}}</a>
+                                        
+                                    </div>
+                                </div>
+                                </a>
+                                {% endfor %}
                             </div>
-                            
-                         <!-- Insert Faculty here  -->   
-
+                           
+                    
                             
                         </div>
                         

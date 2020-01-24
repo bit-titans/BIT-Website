@@ -73,8 +73,19 @@ def videopost():
 
 @app.route('/department/<string:dept>')
 def departmemt(dept):
+   mydb = mysql.connector.connect(
+  host="ec2-15-206-77-23.ap-south-1.compute.amazonaws.com",
+  user="root",
+  passwd="admin123",
+auth_plugin='mysql_native_password'
+)
+   mycursor = mydb.cursor()
+   mycursor.execute("use bit")
+   mycursor = mydb.cursor()
+   mycursor.execute("SELECT * FROM Faculty where Dept='%s'" %(dept))
+   myresult = mycursor.fetchall()
    if(dept=="CSE"):
-      return render_template("cse.html")
+      return render_template("cse.html",facs=myresult)
    elif(dept=="ECE"):
       return render_template("ece.html")
    elif(dept=="CV"):
