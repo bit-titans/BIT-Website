@@ -87,7 +87,7 @@
                                     <button id="achBtn" class="btn" ><span>Achievements </span></button>
                                     <button class="btn" id="iBtn"><span>Infrastructure </span></button>
                                     <button class="btn" id="rBtn"><span>Research </span></button>
-                                    <button class="btn" ><span>Post Graduate </span></button>
+                                    <button class="btn" id="pBtn" ><span>Post Graduate </span></button>
                                     <br>
                                 </div>
                                 </div>
@@ -137,7 +137,21 @@
 
             </div>
 
+            <div id="pModal" class="pmodal">
+
+                <!-- Modal content -->
+                <div class="pmodal-content">
+                  <span class="pclose">&times;<br></span>
+                  {% include "cse_post.html" %}
+
+                </div>
+
+
+            </div>
+
             <script>
+
+
 //Acievement
   // Get the modal
 var amodal = document.getElementById("aModal");
@@ -219,6 +233,34 @@ rspan.onclick = function() {
 window.onclick = function(event) {
   if (event.target == rmodal) {
     rmodal.style.display = "none";
+  }
+}
+
+//Post
+  // Get the modal
+  var pmodal = document.getElementById("pModal");
+
+// Get the button that opens the modal
+var pbtn = document.getElementById("pBtn");
+
+// Get the <span> element that closes the modal
+var pspan = document.getElementsByClassName("pclose")[0];
+
+// When the user clicks on the button, open the modal 
+pbtn.onclick = function() {
+  console.log("Click");
+  pmodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+pspan.onclick = function() {
+  pmodal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == pmodal) {
+    pmodal.style.display = "none";
   }
 }
             </script>
