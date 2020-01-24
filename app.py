@@ -7,6 +7,7 @@ app.config.from_pyfile('config.cfg')
 import mysql.connector
 @app.route('/')
 def index():
+   # TODO: Change to AJAX
    #Facebook Likes Count
    page = requests.get("https://www.facebook.com/bitsince1979/")
    tree = html.fromstring(page.content)
@@ -113,6 +114,11 @@ auth_plugin='mysql_native_password'
 @app.route('/videospost')
 def videopost():
    return render_template('video-post.html')
+
+@app.route('/department/<string:dept>')
+def departmemt(dept):
+   if(dept=="CSE"):
+      return render_template("cse.html")
 
 def getDate(myDate):
     date_suffix = ["th", "st", "nd", "rd"]
