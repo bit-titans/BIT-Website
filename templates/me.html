@@ -82,6 +82,28 @@
                     <p>1: An ability that meets the needs of Industries/ society and the country in general and to synthesize data and technical concepts for application to mechanical engineering software.<br> 2 : Ability to accept new challenges for multi
                         disciplinary projects with a sound foundation in mathematical, scientific and engineering areas necessary to achieve excellence in solving and analyzing engineering problems and to prepare for graduate studies.<br> 3: Ability to
                         promote and develop an ambition of life-long learning and to apply them to professional ethics and codes of professional practices.</p>
+
+                    <!-- Faculty-->
+                    <div class="section-heading mt-30">
+                        <h5>Faculty</h5>
+                    </div>
+                    {% for fac in facs %}
+                    <!-- Single Team Member -->
+                    <a href="#">
+                        <div class="single-team-member d-flex align-items-center">
+                            <div class="team-member-thumbnail">
+                                <img src="http://localhost:8080/faculty/{{fac[0]}}.jpg" alt="">
+
+                            </div>
+                            <div class="team-member-content">
+                                <h6>{{fac[1]}}</h6>
+                                <span>{{fac[2]}}</span> Qualification:-{{fac[3]}}
+                                <br> Email:- <a href="mailto:{{fac[4]}}" style="color: blue;">{{fac[4]}}</a>
+
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
                 </div>
 
                 <!-- Insert Faculty here  -->

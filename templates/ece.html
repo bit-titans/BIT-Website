@@ -88,6 +88,28 @@
                     <h3>Program Specific Outcomes</h3>
                     <p> 1: The graduates will be able to apply the principles of Electronics and Communication in core areas.<br> 2: An ability to use latest hardware and software tools in Electronics and Communication engineering.<br> 3: Preparing Graduates
                         to satisfy industrial needs and pursue higher studies with social-awareness and universal moral values.</p>
+
+                    <!-- Faculty-->
+                    <div class="section-heading mt-30">
+                        <h5>Faculty</h5>
+                    </div>
+                    {% for fac in facs %}
+                    <!-- Single Team Member -->
+                    <a href="#">
+                        <div class="single-team-member d-flex align-items-center">
+                            <div class="team-member-thumbnail">
+                                <img src="http://localhost:8080/faculty/{{fac[0]}}.jpg" alt="">
+
+                            </div>
+                            <div class="team-member-content">
+                                <h6>{{fac[1]}}</h6>
+                                <span>{{fac[2]}}</span> Qualification:-{{fac[3]}}
+                                <br> Email:- <a href="mailto:{{fac[4]}}" style="color: blue;">{{fac[4]}}</a>
+
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
                 </div>
 
                 <!-- Insert Faculty here  -->
