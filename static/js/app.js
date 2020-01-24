@@ -1,9 +1,4 @@
 $(document).ready(function() {
-    $.get("https://www.instagram.com/bitsince1979/?__a=1", function(data, status) {
-        var data = data.graphql.user.edge_followed_by.count;
-        var ele = document.getElementById('insta');
-        ele.innerHTML = data;
-      });
     $("#kanrules").click(function() {
         window.open("http://localhost:8080/C_and_R/kan_rules.pdf", '_blank');
         
