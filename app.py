@@ -75,8 +75,10 @@ def videopost():
 def departmemt(dept):
    if(dept=="CSE"):
       return render_template("cse.html")
-   if(dept=="ECE"):
+   elif(dept=="ECE"):
       return render_template("ece.html")
+   elif(dept=="CV"):
+      return render_template("cv.html")
 
 def getDate(myDate):
     date_suffix = ["th", "st", "nd", "rd"]
