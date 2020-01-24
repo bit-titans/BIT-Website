@@ -79,6 +79,8 @@ def departmemt(dept):
       return render_template("ece.html")
    elif(dept=="CV"):
       return render_template("cv.html")
+   elif(dept=="ME"):
+      return render_template("me.html")
 
 def getDate(myDate):
     date_suffix = ["th", "st", "nd", "rd"]
