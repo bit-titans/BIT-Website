@@ -66,10 +66,32 @@
               <li>PSO1: The graduates will have the ability to plan, analyze, design, execute and maintain cost effective civil engineering structures without over exploitation of natural resources.</li>
               <li>PSO2: The graduates of civil engineering program will have the ability to take up employment, entrepreneurship, research and development for sustainable civil society.</li>
               <li>PSO3: The graduates will be able to peruse opportunities for personal and professional growth, higher studies, demonstrate leadership skills and engage in lifelong learning by active participation in the civil engineering profession.</li>
-              <li>PSO4: The graduates will be able to demonstrate professional integrity and an appreciation of ethical, environmental, regulatory and issues relative to civil engineering projects.</li></ul>						 
+              <li>PSO4: The graduates will be able to demonstrate professional integrity and an appreciation of ethical, environmental, regulatory and issues relative to civil engineering projects.</li></ul>		
+              
+                <!-- Faculty-->   
+                <div class="section-heading mt-30">
+                  <h5>Faculty</h5>
+              </div>
+              {% for fac in facs %}
+              <!-- Single Team Member -->
+              <a href="#" style="margin: 10px;">
+              <div class="single-team-member d-flex align-items-center">
+                  <div class="team-member-thumbnail">
+                      <img src="http://localhost:8080/faculty/{{fac[0]}}.jpg" alt="">
+                      
+                  </div>
+                  <div class="team-member-content">
+                      <h6>{{fac[1]}}</h6>
+                      <span>{{fac[2]}}</span>
+                      Qualification:-{{fac[3]}}<br>
+                         Email:- {{fac[4]}}
+                      
+                  </div>
+              </div>
+              </a>
+              {% endfor %}
                             </div>
-                            
-                         <!-- Insert Faculty here  -->   
+                             
 
                             
                         </div>

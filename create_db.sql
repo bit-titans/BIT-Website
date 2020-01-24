@@ -12,3 +12,10 @@ create table documents(id int,
                         constraint fkd foreign key(id) references Announcements(id),
                         constraint pkd primary key(id,did)
                         );
+
+create table Faculty(id Numeric primary key,
+					 FName text,
+                     Designation text,
+                     Qualification text,
+                     Email text,
+                     Dept text);
