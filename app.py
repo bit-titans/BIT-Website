@@ -92,6 +92,8 @@ auth_plugin='mysql_native_password'
       return render_template("cv.html",facs=myresult)
    elif(dept=="ME"):
       return render_template("me.html",facs = myresult)
+   elif(dept=="EEE"):
+      return render_template("eee.html",facs = myresult)
 
 def getDate(myDate):
     date_suffix = ["th", "st", "nd", "rd"]
