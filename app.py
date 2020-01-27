@@ -94,6 +94,8 @@ auth_plugin='mysql_native_password'
       return render_template("me.html",facs = myresult)
    elif(dept=="EEE"):
       return render_template("eee.html",facs = myresult)
+   elif(dept=="IEM"):
+      return render_template("iem.html",facs = myresult)
 
 def getDate(myDate):
     date_suffix = ["th", "st", "nd", "rd"]
@@ -106,4 +108,3 @@ def getDate(myDate):
 
 if __name__ == '__main__':
    app.run(debug=True)
-   
