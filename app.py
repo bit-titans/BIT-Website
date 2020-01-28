@@ -104,6 +104,37 @@ def departmemt(dept):
    elif(dept=="EIM"):
       return render_template("eim.html",facs = db.faculty[dept])
 
+@app.route('/club/<string:club>')
+def Clubs(club):
+   if(club=="aikya"):
+      return render_template("aikya.html")
+   elif(club=="voice"):
+      return render_template("voice.html")
+   elif(club=="tedx"):
+      return render_template("tedx.html")
+   elif(club=="sports"):
+      return render_template("sports.html")
+   elif(club=="shuttered"):
+      return render_template("shuttered.html")
+   elif(club=="samskriti"):
+      return render_template("samskriti.html")
+   elif(club=="rotract"):
+      return render_template("rotract.html")
+   elif(club=="robolution"):
+      return render_template("robolution.html")
+   elif(club=="leo"):
+      return render_template("leo.html")
+   elif(club=="elevate"):
+      return render_template("elevate.html")
+   elif(club=="edc"):
+      return render_template("edc.html")
+   elif(club=="ecsa"):
+      return render_template("ecsa.html")
+   elif(club=="eco"):
+      return render_template("eco.html")
+   elif(club=="dance"):
+      return render_template("dance.html")
+
 def getDate(myDate):
     date_suffix = ["th", "st", "nd", "rd"]
 
