@@ -13,7 +13,7 @@ auth_plugin='mysql_native_password'
 )
 mycursor = mydb.cursor()
 mycursor.execute("use bit")
-depts = ['CSE','ECE','CV','ME','EEE','IEM','EIM','ISE','TELE','MAT']
+depts = ['CSE','ECE','CV','ME','EEE','IEM','EIM','ISE','TELE','MAT','CHE']
 for i in depts:
    mycursor = mydb.cursor()
    mycursor.execute("SELECT * FROM Faculty where Dept='%s'" %(i))
@@ -70,6 +70,20 @@ def Res(dept,res):
    if dept=='MAT':
       if res=='research':
          return render_template('mat_research.html')
+   if dept=='CHE':
+      if res=='research':
+         return render_template('chem_research.html')
+      if res=='infra':
+         return render_template('chem_infra.html')
+   if dept=='CSE':
+      if res=='ach':
+         return render_template('cse_ach.html')
+      if res=='infra':
+         return render_template('cse_infra.html')
+      if res=='post':
+         return render_template('cse_post.html')
+      if res=='research':
+         return render_template('cse_research.html')
 
 @app.route('/announcement/<id>')
 def announcement(id):
@@ -115,6 +129,9 @@ def departmemt(dept):
       return render_template("tele.html",facs = db.faculty[dept])
    elif(dept=="MAT"):
       return render_template("mat.html",facs = db.faculty[dept])
+   elif(dept=="CHE"):
+      return render_template("chem.html",facs = db.faculty[dept])
+   
 
 @app.route('/club/<string:club>')
 def Clubs(club):
