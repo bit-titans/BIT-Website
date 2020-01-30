@@ -28,7 +28,7 @@
                     <div class="section-heading">
                         <h5>About</h5>
                     </div>
-                    <p >The department of Instrumentation Technology was started in the year 1981-82 with the intake of 40 and later it was increased to 60. As indicated by the continuous opinion from the alumnae and up to date necessities from the core industries, the department has been renamed as Electronics and Instrumentation Engineering. The department started new PG course in the academic year 2014-15 onwards with the sanctioned intake of 24. The main aim of this department is, to fulfill the requirement in frontier technology of Electronics and Instrumentation Engineering in the area of manufacturing, Instrumentation, Process control, Embedded System, Signal Processing and industrial automation.<br>
+                    <p >The department of Instrumentation Technology was started in the year 1981-82 with the intake of 40 and later it was increased to 60. As indicated by the continuous opinion from the alumnae and up to date nEIMssities from the core industries, the department has been renamed as Electronics and Instrumentation Engineering. The department started new PG course in the academic year 2014-15 onwards with the sanctioned intake of 24. The main aim of this department is, to fulfill the requirement in frontier technology of Electronics and Instrumentation Engineering in the area of manufacturing, Instrumentation, Process control, Embedded System, Signal Processing and industrial automation.<br>
 
                       The department has been continuously imparting standard and quality service to the students for the past 36 years. The department produced 32 batches of undergraduates so far in which 15 batches under Bangalore University and 18 batches under Visvesvaraya Technological University. The department has been inculcating moral values in addition to the curricular and co-curricular activities. The Research and Development Centre was started in the academic year 2010-2011 to guide and assist the research scholars.<br>
                       
@@ -59,7 +59,7 @@
               4.	To promote collaboration with industry and Institute for constructive interaction for better Integration of Theory and Real Time Applications.</p>
               <h3>Programme Educational Objectives (PEOs)</h3>
               <p >The Program Educational Objectives define future roles for which we are preparing our students by studying four years of undergraduate engineering program. The major objectives for the Department of Electronics and Instrumentation Engineering at Bangalore Institute of Technology are:</p>
-              <p >1.	To provide foundation in Mathematical, Scientific, and Electronics and Instrumentation Engineering, necessary to solve Engineering Problems.<br>
+              <p >1.	To provide foundation in Mathematical, Scientific, and Electronics and Instrumentation Engineering, nEIMssary to solve Engineering Problems.<br>
               2.	To prepare Electronics and Instrumentation Engineering graduates   for Industry, Academia and globally employable with Professional Ethics.<br>
               3.	The graduates of Electronics and Instrumentation Engineering should be able to use their comprehensive skill set to launch a Carrier in Industry, Research and to become an Entrepreneur.<br>
               4.	To provide a knowledge base for creating new Innovative Techniques in Instrumentation and Process Industry with Multidisciplinary projects.</p>
@@ -78,7 +78,7 @@
               7.	Environment and sustainability: Understand the impact of the professional engineering solutions in  societal  and  environmental  contexts,  and  demonstrate  the  knowledge  of,  and  need  for sustainable development.<br>
               8.	Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.<br>
               9.	Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.<br>
-              10.	Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.<br>
+              10.	Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and rEIMive clear instructions.<br>
               11.	Project   management   and   finance:   Demonstrate   knowledge   and   understanding   of   the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.<br>
               12.	Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</p>				
      
@@ -119,11 +119,11 @@
                                 </div>
                                 <div class="single-sidebar-widget p-30" style="position: relative;top: -50px;">
                                 
-                                <div class="social-followers-info">
-                                    <button id="achBtn" class="btn" ><span>Achievements </span></button>
-                                    <button class="btn" id="iBtn"><span>Infrastructure </span></button>
-                                    <button class="btn" id="rBtn"><span>Research </span></button>
-                                    <button class="btn" id="pBtn" ><span>Post Graduate </span></button>
+                                  <div class="social-followers-info">
+                                    <button class="btn" id="rBtn" type="button" data-toggle="modal" data-target="#popup" onclick="getRes('EIM','ach')"><span>Achievements </span></button>
+                                    <button class="btn" id="rBtn" type="button" data-toggle="modal" data-target="#popup" onclick="getRes('EIM','infra')"><span>Infrastructure </span></button>
+                                    <button class="btn" id="rBtn" type="button" data-toggle="modal" data-target="#popup" onclick="getRes('EIM','research')"><span>Research </span></button>
+                                    <button class="btn" id="rBtn" type="button" data-toggle="modal" data-target="#popup" onclick="getRes('EIM','post')"><span>Post Graduate </span></button>
                                     <br>
                                 </div>
                                 </div>
@@ -137,167 +137,5 @@
             </section>
             <!-- ##### About Us Area End ##### -->
             
-            <div id="aModal" class="amodal">
-
-                <!-- Modal content -->
-                <div class="amodal-content">
-                  <span class="aclose">&times;<br></span>
-                  {% include "eim_ach.html" %}
-
-                </div>
-
-
-            </div>
-
-            <div id="iModal" class="imodal">
-
-                <!-- Modal content -->
-                <div class="imodal-content">
-                  <span class="iclose">&times;<br></span>
-                  {% include "eim_infra.html" %}
-
-                </div>
-
-
-            </div>
-
-            <div id="rModal" class="rmodal">
-
-                <!-- Modal content -->
-                <div class="rmodal-content">
-                  <span class="rclose">&times;<br></span>
-                  {% include "eim_research.html" %}
-
-                </div>
-
-
-            </div>
-
-            <div id="pModal" class="pmodal">
-
-                <!-- Modal content -->
-                <div class="pmodal-content">
-                  <span class="pclose">&times;<br></span>
-                  {% include "eim_post.html" %}
-
-                </div>
-
-
-            </div>
-
-            <script>
-
-
-//Acievement
-  // Get the modal
-var amodal = document.getElementById("aModal");
-
-// Get the button that opens the modal
-var abtn = document.getElementById("achBtn");
-
-// Get the <span> element that closes the modal
-var aspan = document.getElementsByClassName("aclose")[0];
-
-// When the user clicks on the button, open the modal 
-abtn.onclick = function() {
-  console.log("Click");
-  amodal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-aspan.onclick = function() {
-  amodal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == amodal) {
-    amodal.style.display = "none";
-  }
-}
-
-//Infrastructure
-  // Get the modal
-  var imodal = document.getElementById("iModal");
-
-// Get the button that opens the modal
-var ibtn = document.getElementById("iBtn");
-
-// Get the <span> element that closes the modal
-var ispan = document.getElementsByClassName("iclose")[0];
-
-// When the user clicks on the button, open the modal 
-ibtn.onclick = function() {
-  console.log("Click");
-  imodal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-ispan.onclick = function() {
-  imodal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == imodal) {
-    imodal.style.display = "none";
-  }
-}
-
-//Research
-  // Get the modal
-  var rmodal = document.getElementById("rModal");
-
-// Get the button that opens the modal
-var rbtn = document.getElementById("rBtn");
-
-// Get the <span> element that closes the modal
-var rspan = document.getElementsByClassName("rclose")[0];
-
-// When the user clicks on the button, open the modal 
-rbtn.onclick = function() {
-  console.log("Click");
-  rmodal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-rspan.onclick = function() {
-  rmodal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == rmodal) {
-    rmodal.style.display = "none";
-  }
-}
-
-//Post
-  // Get the modal
-  var pmodal = document.getElementById("pModal");
-
-// Get the button that opens the modal
-var pbtn = document.getElementById("pBtn");
-
-// Get the <span> element that closes the modal
-var pspan = document.getElementsByClassName("pclose")[0];
-
-// When the user clicks on the button, open the modal 
-pbtn.onclick = function() {
-  console.log("Click");
-  pmodal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-pspan.onclick = function() {
-  pmodal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == pmodal) {
-    pmodal.style.display = "none";
-  }
-}
-            </script>
+            
             {% endblock %}

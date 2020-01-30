@@ -44,6 +44,7 @@ $(document).ready(function() {
     $("#2018b").click(()=>{window.open("/placement/Companies-dirng-2018.pdf",'_blank')});
     $("#2017b").click(()=>{window.open("/placement/Companies-dirng-2017-.pdf",'_blank')});
     $("#2016b").click(()=>{window.open("/placement/Companies-dirng-2016.pdf",'_blank')});
+    
   });
 
 

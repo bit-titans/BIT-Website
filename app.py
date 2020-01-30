@@ -84,6 +84,70 @@ def Res(dept,res):
          return render_template('cse_post.html')
       if res=='research':
          return render_template('cse_research.html')
+   if dept=='CV':
+      if res=='ach':
+         return render_template('cv_ach.html')
+      if res=='infra':
+         return render_template('cv_infra.html')
+      if res=='post':
+         return render_template('cv_post.html')
+      if res=='research':
+         return render_template('cv_research.html')
+   if dept=='ME':
+      if res=='ach':
+         return render_template('me_ach.html')
+      if res=='infra':
+         return render_template('me_infra.html')
+      if res=='post':
+         return render_template('me_post.html')
+      if res=='research':
+         return render_template('me_research.html')
+   if dept=='EEE':
+      if res=='ach':
+         return render_template('eee_ach.html')
+      if res=='infra':
+         return render_template('eee_infra.html')
+      if res=='research':
+         return render_template('eee_research.html')
+   if dept=='IEM':
+      if res=='ach':
+         return render_template('iem_ach.html')
+      if res=='infra':
+         return render_template('iem_infra.html')
+   if dept=='ECE':
+      if res=='ach':
+         return render_template('ece_ach.html')
+      if res=='infra':
+         return render_template('ece_infra.html')
+      if res=='post':
+         return render_template('ece_post.html')
+      if res=='research':
+         return render_template('ece_research.html')
+   if dept=='ISE':
+      if res=='ach':
+         return render_template('ise_ach.html')
+      if res=='infra':
+         return render_template('ise_infra.html')
+      if res=='post':
+         return render_template('ise_post.html')
+      if res=='research':
+         return render_template('ise_research.html')
+   if dept=='EIM':
+      if res=='ach':
+         return render_template('eim_ach.html')
+      if res=='infra':
+         return render_template('eim_infra.html')
+      if res=='post':
+         return render_template('eim_post.html')
+      if res=='research':
+         return render_template('eim_research.html')
+   if dept=='TELE':
+      if res=='ach':
+         return render_template('tele_ach.html')
+      if res=='infra':
+         return render_template('tele_infra.html')
+      if res=='research':
+         return render_template('tele_research.html')
 
 @app.route('/announcement/<id>')
 def announcement(id):
