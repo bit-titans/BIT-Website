@@ -2,20 +2,36 @@ from flask import Flask,render_template
 import math
 app = Flask(__name__)
 import mysql.connector
+class DB:
+   faculty = {}
+db = DB()
+mydb = mysql.connector.connect(
+host="localhost",
+user="root",
+passwd="admin123",
+auth_plugin='mysql_native_password'
+)
+mycursor = mydb.cursor()
+mycursor.execute("use bit")
+depts = ['CSE','ECE','CV','ME','EEE','IEM','EIM','ISE','TELE','MAT']
+for i in depts:
+   mycursor = mydb.cursor()
+   mycursor.execute("SELECT * FROM Faculty where Dept='%s'" %(i))
+   db.faculty[i] =  mycursor.fetchall()
 @app.route('/')
 def index():
    mydb = mysql.connector.connect(
-  host="ec2-15-206-77-23.ap-south-1.compute.amazonaws.com",
-  user="root",
-  passwd="admin123",
+host="localhost",
+user="root",
+passwd="admin123",
 auth_plugin='mysql_native_password'
 )
    mycursor = mydb.cursor()
    mycursor.execute("use bit")
    mycursor = mydb.cursor()
    mycursor.execute("SELECT * FROM Announcements order by id desc LIMIT 5")
-   myresult = mycursor.fetchall()
-   return render_template('index.html', annons=myresult,getDate=getDate)
+   annos = mycursor.fetchall()
+   return render_template('index.html', annons=annos,getDate=getDate)
 
 @app.route('/about')
 def about():
@@ -28,7 +44,7 @@ def placement():
 @app.route('/archive/<int:page>')
 def archive(page):
    mydb = mysql.connector.connect(
-  host="ec2-15-206-77-23.ap-south-1.compute.amazonaws.com",
+  host="localhost",
   user="root",
   passwd="admin123",
 auth_plugin='mysql_native_password'
@@ -49,10 +65,16 @@ auth_plugin='mysql_native_password'
 def contact():
    return render_template('contact.html')
 
+@app.route('/getRes/<string:dept>/<string:res>')
+def Res(dept,res):
+   if dept=='MAT':
+      if res=='research':
+         return render_template('mat_research.html')
+
 @app.route('/announcement/<id>')
 def announcement(id):
    mydb = mysql.connector.connect(
-  host="ec2-15-206-77-23.ap-south-1.compute.amazonaws.com",
+  host="localhost",
   user="root",
   passwd="admin123",
 auth_plugin='mysql_native_password'
@@ -73,25 +95,58 @@ def videopost():
 
 @app.route('/department/<string:dept>')
 def departmemt(dept):
-   mydb = mysql.connector.connect(
-  host="ec2-15-206-77-23.ap-south-1.compute.amazonaws.com",
-  user="root",
-  passwd="admin123",
-auth_plugin='mysql_native_password'
-)
-   mycursor = mydb.cursor()
-   mycursor.execute("use bit")
-   mycursor = mydb.cursor()
-   mycursor.execute("SELECT * FROM Faculty where Dept='%s'" %(dept))
-   myresult = mycursor.fetchall()
    if(dept=="CSE"):
-      return render_template("cse.html",facs=myresult)
+      return render_template("cse.html",facs=db.faculty[dept])
    elif(dept=="ECE"):
-      return render_template("ece.html",facs = myresult)
+      return render_template("ece.html",facs = db.faculty[dept])
    elif(dept=="CV"):
-      return render_template("cv.html",facs=myresult)
+      return render_template("cv.html",facs=db.faculty[dept])
    elif(dept=="ME"):
-      return render_template("me.html",facs = myresult)
+      return render_template("me.html",facs = db.faculty[dept])
+   elif(dept=="EEE"):
+      return render_template("eee.html",facs = db.faculty[dept])
+   elif(dept=="IEM"):
+      return render_template("iem.html",facs = db.faculty[dept])
+   elif(dept=="EIM"):
+      return render_template("eim.html",facs = db.faculty[dept])
+   elif(dept=="ISE"):
+      return render_template("ise.html",facs = db.faculty[dept])
+   elif(dept=="TELE"):
+      return render_template("tele.html",facs = db.faculty[dept])
+   elif(dept=="MAT"):
+      return render_template("mat.html",facs = db.faculty[dept])
+
+@app.route('/club/<string:club>')
+def Clubs(club):
+   if(club=="aikya"):
+      return render_template("aikya.html")
+   elif(club=="voice"):
+      return render_template("voice.html")
+   elif(club=="tedx"):
+      return render_template("tedx.html")
+   elif(club=="sports"):
+      return render_template("sports.html")
+   elif(club=="shuttered"):
+      return render_template("shuttered.html")
+   elif(club=="samskriti"):
+      return render_template("samskriti.html")
+   elif(club=="rotract"):
+      return render_template("rotract.html")
+   elif(club=="robolution"):
+      return render_template("robolution.html")
+   elif(club=="leo"):
+      return render_template("leo.html")
+   elif(club=="elevate"):
+      return render_template("elevate.html")
+   elif(club=="edc"):
+      return render_template("edc.html")
+   elif(club=="ecsa"):
+      return render_template("ecsa.html")
+   elif(club=="eco"):
+      return render_template("eco.html")
+   elif(club=="dance"):
+      return render_template("dance.html")
+
 
 def getDate(myDate):
     date_suffix = ["th", "st", "nd", "rd"]
@@ -104,4 +159,3 @@ def getDate(myDate):
 
 if __name__ == '__main__':
    app.run(debug=True)
-   

@@ -1,0 +1,283 @@
+{% extends "layout.html" %}
+{% block title %}DEPARTMENT OF TELECOMMUNICATION ENGINEERING{% endblock %}
+{% block content %}
+<!-- ##### Breadcrumb Area Start ##### -->
+<section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/40.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2>DEPARTMENT OF TELECOMMUNICATION ENGINEERING</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Breadcrumb Area End ##### -->
+
+
+
+<!-- ##### About Us Area Start ##### -->
+<section class="about-us-area" style="padding-top: 30px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-8">
+                <!-- About Us Content -->
+                <div class="about-us-content bg-white mb-30 p-30 box-shadow">
+                    <!-- Section Title -->
+                    <div class="section-heading">
+                        <h5>About</h5>
+                    </div>
+                    <p >The Department of Telecommunication Engineering was started in the year 1992-93. The Department has a team of well qualified and dedicated staff members. On the forefront of development and with the advent of technological revolution and quantum development in the field of Electronics and Communications, due to myriad complexities of the e-world, it was inevitable for the evolution of another field to make a distinct identity of its own. Thus, the ball of development was set into motion and the Telecommunication field gradually assumed a role of pre-eminence which is shared by few other engineering disciplines in the modern world. <br><br>
+
+                        The Department offers Under-Graduate [UG] Course and has a Research Center under V.T.U. It has excellent infrastructure facilities and all the labs are well equipped. The objective of the Department is to empower every student to be creative and productive in the field of Telecommunication Engineering by imparting excellent Technical Education and inculcating Human Values.<br><br>
+                        
+                        The Department offers an excellent academic environment with a team of highly qualified and dedicated faculties. Two staff members have obtained their Ph.D. degree and three other faculty members are pursuing their Ph.D. The Department has the credit of many Technical papers being published in National, International Journals and conference proceedings.<br><br>
+                        
+                        Most of our Telecommunication engineering students get placed in good Companies like Robert Bosh, Oracle, Musigma, TCS, Wipro, IBM, Capgemini, Ericsson, Tech Mahindra, Indian Navy, HP, Infosys, I Gate, SOCIETE GENERAL, CISCO, Computer Science Corporation, Aricent, L&T Infotech, Allstate, Indegene life system, INTEL etc.<br><br>
+                        
+                        The Department has a Student Association called TESA to organize technical seminars and workshops for the benefit of students. They are also part of many clubs such as Rotaract club, Xkalibre, BIT ECO Club, Samskruthi , IEEE, Leo Club etc.<br><br>
+                        
+                        Dr.S.Shanthala is currently Professor and Head of Department, Electronics and Telecommunication Engineering Department, Bangalore Institute of Technology, Bangalore. She has 29 Years of teaching experience and is actively involved in the Research and Development work. Research papers are published in leading international journals and conference proceedings.   Prof. S. Shanthala has been awarded gold medal for one of her papers published in the Institute of Engineers Journal. She has authored a book on digital electronics which was published by spectrum publications. She has also been instrumental in obtaining financial aids from funding agencies for the on-going Research and Developmental work in the Department. One Research Scholar has been awarded the Ph.D. Degree under her guidance and there are 4 other Research scholars pursuing research. Her Research interests are VLSI and Embedded Systems.
+                        </p><br><br>
+                        
+                                <div class="d-flex justify-content-center"><div class="card" style="width: 18rem;">
+                                    <img src="/faculty/TEL01.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dr.S.Shanthala</h5>
+                                        <p class="card-text">Prof. & Head of the Dept
+                                            </p>
+                                        </div>
+                                    </div></div>
+                               
+                            
+                            <!-- Team Member Area -->
+                            <div class="section-heading mt-30">
+                               <h5> Vision and Mission </h5>
+                            </div>
+                                    <h3>Vision</h3>
+    <p >Empower every student to be Creative and Productive in the field of Electronics and Telecommunication Engineering by imparting excellent Technical Education and inculcating Human Values. </p>
+    <h3>Mission</h3>
+    <p>  M1: To make our Students acquaint with the Global requirements such as Problem Solving Skills, Cultural Sensitivity, Ethical behavior and Social Responsibility.<br>
+       M2: To Motivate our Students to pursue Higher Education and engage in continuous upgradation of their Professional Skills.<br>
+       M3: To encourage students to develop Communication Skills, Professional Values and Positive Attitude that in turn leads to fostering Leadership Qualities.<br>
+       </p>
+    <h3>Program Educational Objectives (PEO’s)</h3>
+    <p > 1.To prepare our Graduates with strong foundations in Mathematical, Scientific and Problem Solving Skills.<br>
+     2. To prepare our Graduates to adapt to fast Technical changes in the domain area of core Electronics and Telecommunication Engineering by interacting and working closely with other Premier Technological Institutions / Industries having similar Vision.<br>
+     3. To enable our Graduates to develop the Knowledge and Skills across the range of disciplines.<br>
+     4.  To prepare our Graduates to meet the Global challenges by inculcating traits such as Communication Skills, Ethical Values and ability to work in a team. </p>
+    <h3>Program Specific Outcomes</h3>
+    <p> 1: Analyze and Design Analog & Digital modules for a given Specification and Function.<br>
+     2: Implement Functional Blocks of Hardware-Software Co-Designs for Embedded Systems, Signal Processing, Communication and Networking applications.</p>						
+     <!-- Faculty-->   
+     <div class="section-heading mt-30">
+      <h5>Faculty</h5>
+  </div>
+  {% for fac in facs %}
+  <!-- Single Team Member -->
+  <a href="#" >
+  <div class="single-team-member d-flex align-items-center">
+      <div class="team-member-thumbnail">
+          <img src="/faculty/{{fac[0]}}.jpg" alt="">
+          
+      </div>
+      <div class="team-member-content">
+          <h6>{{fac[1]}}</h6>
+          <span>{{fac[2]}}</span>
+          Qualification:-{{fac[3]}}<br>
+             Email:- <a href="mailto:{{fac[4]}}" style="color: blue;">{{fac[4]}}</a>
+          
+      </div>
+  </div>
+  </a>
+  {% endfor %}
+                            </div>
+                            
+                         <!-- Insert Faculty here  -->   
+
+                            
+                        </div>
+                        
+                        
+                        <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+                            <div class="sidebar-area bg-white mb-30 box-shadow">
+                                
+                                <div class="section-heading">
+                                    <h5>Other Links</h5>
+                                </div>
+                                <div class="single-sidebar-widget p-30" style="position: relative;top: -50px;">
+                                
+                                <div class="social-followers-info">
+                                    <button id="achBtn" class="btn" ><span>Achievements </span></button>
+                                    <button class="btn" id="iBtn"><span>Infrastructure </span></button>
+                                    <button class="btn" id="rBtn"><span>Research </span></button>
+                                    
+                                    
+                                    <br>
+                                </div>
+                                </div>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ##### About Us Area End ##### -->
+            
+            <div id="aModal" class="amodal">
+
+                <!-- Modal content -->
+                <div class="amodal-content">
+                  <span class="aclose">&times;<br></span>
+                  {% include "tele_ach.html" %}
+
+                </div>
+
+
+            </div>
+
+            <div id="iModal" class="imodal">
+
+                <!-- Modal content -->
+                <div class="imodal-content">
+                  <span class="iclose">&times;<br></span>
+                  {% include "tele_infra.html" %}
+
+                </div>
+
+
+            </div>
+
+            <div id="rModal" class="rmodal">
+
+                <!-- Modal content -->
+                <div class="rmodal-content">
+                  <span class="rclose">&times;<br></span>
+                  {% include "tele_research.html" %}
+
+                </div>
+
+
+            </div>
+
+            
+
+            <script>
+
+
+//Acievement
+  // Get the modal
+var amodal = document.getElementById("aModal");
+
+// Get the button that opens the modal
+var abtn = document.getElementById("achBtn");
+
+// Get the <span> element that closes the modal
+var aspan = document.getElementsByClassName("aclose")[0];
+
+// When the user clicks on the button, open the modal 
+abtn.onclick = function() {
+  console.log("Click");
+  amodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+aspan.onclick = function() {
+  amodal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == amodal) {
+    amodal.style.display = "none";
+  }
+}
+
+//Infrastructure
+  // Get the modal
+  var imodal = document.getElementById("iModal");
+
+// Get the button that opens the modal
+var ibtn = document.getElementById("iBtn");
+
+// Get the <span> element that closes the modal
+var ispan = document.getElementsByClassName("iclose")[0];
+
+// When the user clicks on the button, open the modal 
+ibtn.onclick = function() {
+  console.log("Click");
+  imodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+ispan.onclick = function() {
+  imodal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == imodal) {
+    imodal.style.display = "none";
+  }
+}
+
+//Research
+  // Get the modal
+  var rmodal = document.getElementById("rModal");
+
+// Get the button that opens the modal
+var rbtn = document.getElementById("rBtn");
+
+// Get the <span> element that closes the modal
+var rspan = document.getElementsByClassName("rclose")[0];
+
+// When the user clicks on the button, open the modal 
+rbtn.onclick = function() {
+  console.log("Click");
+  rmodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+rspan.onclick = function() {
+  rmodal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == rmodal) {
+    rmodal.style.display = "none";
+  }
+}
+
+//Post
+  // Get the modal
+  var pmodal = document.getElementById("pModal");
+
+// Get the button that opens the modal
+var pbtn = document.getElementById("pBtn");
+
+// Get the <span> element that closes the modal
+var pspan = document.getElementsByClassName("pclose")[0];
+
+// When the user clicks on the button, open the modal 
+pbtn.onclick = function() {
+  console.log("Click");
+  pmodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+pspan.onclick = function() {
+  pmodal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == pmodal) {
+    pmodal.style.display = "none";
+  }
+}
+            </script>
+            {% endblock %}
