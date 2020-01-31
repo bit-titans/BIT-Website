@@ -13,7 +13,7 @@ auth_plugin='mysql_native_password'
 )
 mycursor = mydb.cursor()
 mycursor.execute("use bit")
-depts = ['CSE','ECE','CV','ME','EEE','IEM','EIM','ISE','TELE','MAT','CHE']
+depts = ['CSE','ECE','CV','ME','EEE','IEM','EIM','ISE','TELE','MAT','CHE','MBA']
 for i in depts:
    mycursor = mydb.cursor()
    mycursor.execute("SELECT * FROM Faculty where Dept='%s'" %(i))
@@ -148,6 +148,9 @@ def Res(dept,res):
          return render_template('tele_infra.html')
       if res=='research':
          return render_template('tele_research.html')
+   if dept=='MBA':
+      if res=='other':
+         return render_template('mba_other.html')
 
 @app.route('/announcement/<id>')
 def announcement(id):
@@ -195,6 +198,8 @@ def departmemt(dept):
       return render_template("mat.html",facs = db.faculty[dept])
    elif(dept=="CHE"):
       return render_template("chem.html",facs = db.faculty[dept])
+   elif(dept=="MBA"):
+      return render_template("mba.html",facs = db.faculty[dept])
    
 
 @app.route('/club/<string:club>')
