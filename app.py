@@ -13,7 +13,7 @@ auth_plugin='mysql_native_password'
 )
 mycursor = mydb.cursor()
 mycursor.execute("use bit")
-depts = ['CSE','ECE','CV','ME','EEE','IEM','EIM','ISE','TELE','MAT','CHE','MBA']
+depts = ['CSE','ECE','CV','ME','EEE','IEM','EIM','ISE','TELE','MAT','CHE','MBA','LIB','PHY','MCA']
 for i in depts:
    mycursor = mydb.cursor()
    mycursor.execute("SELECT * FROM Faculty where Dept='%s'" %(i))
@@ -75,6 +75,9 @@ def Res(dept,res):
          return render_template('chem_research.html')
       if res=='infra':
          return render_template('chem_infra.html')
+   if dept == 'PHY':
+      if res=='research':
+            return render_template('phy_research.html')
    if dept=='CSE':
       if res=='ach':
          return render_template('cse_ach.html')
@@ -151,6 +154,18 @@ def Res(dept,res):
    if dept=='MBA':
       if res=='other':
          return render_template('mba_other.html')
+   if dept=='LIB':
+      if res=='other':
+         return render_template('lib_other.html')
+      elif res=='infra':
+         return render_template('lib_infra.html')
+   if dept=='MCA':
+      if res=='ach':
+         return render_template('mca_ach.html')
+      if res=='infra':
+         return render_template('mca_infra.html')
+      if res=='research':
+         return render_template('mca_research.html')
 
 @app.route('/announcement/<id>')
 def announcement(id):
@@ -200,6 +215,12 @@ def departmemt(dept):
       return render_template("chem.html",facs = db.faculty[dept])
    elif(dept=="MBA"):
       return render_template("mba.html",facs = db.faculty[dept])
+   elif(dept=="LIB"):
+      return render_template("lib.html",facs = db.faculty[dept])
+   elif(dept=="PHY"):
+      return render_template("phy.html",facs = db.faculty[dept])
+   elif(dept=="MCA"):
+      return render_template("mca.html",facs = db.faculty[dept])
    
 
 @app.route('/club/<string:club>')
