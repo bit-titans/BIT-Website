@@ -2219,6 +2219,8 @@ textarea.form-control {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  position: relative;
+  right: 10px;
 }
 
 .btn span {

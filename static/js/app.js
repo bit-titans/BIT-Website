@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+    $("#v1").html('<source src="/home.mp4" type="video/mp4">' );
     $("#kanrules").click(function() {
         window.open("/C_and_R/kan_rules.pdf", '_blank');
         
@@ -44,6 +46,7 @@ $(document).ready(function() {
     $("#2018b").click(()=>{window.open("/placement/Companies-dirng-2018.pdf",'_blank')});
     $("#2017b").click(()=>{window.open("/placement/Companies-dirng-2017-.pdf",'_blank')});
     $("#2016b").click(()=>{window.open("/placement/Companies-dirng-2016.pdf",'_blank')});
+    $("#alumni").click(()=>{window.open("https://bitalumni.org/",'_blank')});
     $(window).scroll(function() {
       $('video').each(function() {
           if ($(this).visible(true)) {
