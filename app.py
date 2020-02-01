@@ -29,7 +29,7 @@ auth_plugin='mysql_native_password'
    mycursor = mydb.cursor()
    mycursor.execute("use bit")
    mycursor = mydb.cursor()
-   mycursor.execute("SELECT * FROM Announcements order by id desc LIMIT 5")
+   mycursor.execute("SELECT * FROM Announcements where dept='GEN' order by id desc LIMIT 5 ")
    annos = mycursor.fetchall()
    return render_template('index.html', annons=annos,getDate=getDate)
 
@@ -41,8 +41,8 @@ def about():
 def placement():
    return render_template('placement.html')
 
-@app.route('/archive/<int:page>')
-def archive(page):
+@app.route('/archive/<string:dept>/<int:page>')
+def archive(page,dept):
    mydb = mysql.connector.connect(
   host="localhost",
   user="root",
@@ -52,12 +52,12 @@ auth_plugin='mysql_native_password'
    mycursor = mydb.cursor()
    mycursor.execute("use bit")
    mycursor = mydb.cursor()
-   mycursor.execute("select count(*) from Announcements")
+   mycursor.execute("select count(*) from Announcements where dept='"+dept+"'")
    myresult = mycursor.fetchall()
    count = myresult[0][0]
    pages = math.ceil(count/5)
    mycursor = mydb.cursor()
-   mycursor.execute("SELECT * FROM Announcements order by id desc LIMIT "+str((page-1)*5)+",5")
+   mycursor.execute("SELECT * FROM Announcements where dept='"+dept+"' order by id desc LIMIT "+str((page-1)*5)+",5")
    myresult = mycursor.fetchall()
    return render_template('archive.html',pages=pages,annons=myresult,page=page,getDate=getDate)
 
@@ -208,38 +208,49 @@ def videopost():
 
 @app.route('/department/<string:dept>')
 def departmemt(dept):
+   mydb = mysql.connector.connect(
+host="localhost",
+user="root",
+passwd="admin123",
+auth_plugin='mysql_native_password'
+)
+   mycursor = mydb.cursor()
+   mycursor.execute("use bit")
+   mycursor = mydb.cursor()
+   mycursor.execute("SELECT * FROM Announcements where dept='"+dept+"' order by id desc LIMIT 5 ")
+   annos = mycursor.fetchall()
    if(dept=="CSE"):
-      return render_template("cse.html",facs=db.faculty[dept])
+      return render_template("cse.html",facs=db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="ECE"):
-      return render_template("ece.html",facs = db.faculty[dept])
+      return render_template("ece.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="CV"):
-      return render_template("cv.html",facs=db.faculty[dept])
+      return render_template("cv.html",facs=db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="ME"):
-      return render_template("me.html",facs = db.faculty[dept])
+      return render_template("me.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="EEE"):
-      return render_template("eee.html",facs = db.faculty[dept])
+      return render_template("eee.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="IEM"):
-      return render_template("iem.html",facs = db.faculty[dept])
+      return render_template("iem.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="EIM"):
-      return render_template("eim.html",facs = db.faculty[dept])
+      return render_template("eim.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="ISE"):
-      return render_template("ise.html",facs = db.faculty[dept])
+      return render_template("ise.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="TELE"):
-      return render_template("tele.html",facs = db.faculty[dept])
+      return render_template("tele.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="MAT"):
-      return render_template("mat.html",facs = db.faculty[dept])
+      return render_template("mat.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="CHE"):
-      return render_template("chem.html",facs = db.faculty[dept])
+      return render_template("chem.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="MBA"):
-      return render_template("mba.html",facs = db.faculty[dept])
+      return render_template("mba.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="LIB"):
-      return render_template("lib.html",facs = db.faculty[dept])
+      return render_template("lib.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="PHY"):
-      return render_template("phy.html",facs = db.faculty[dept])
+      return render_template("phy.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="MCA"):
-      return render_template("mca.html",facs = db.faculty[dept])
+      return render_template("mca.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    elif(dept=="SPO"):
-      return render_template("sport.html",facs = db.faculty[dept])
+      return render_template("sport.html",facs = db.faculty[dept],annons=annos,getDate=getDate)
    
 
 @app.route('/club/<string:club>')

@@ -1,4 +1,5 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %} {% block title %}Archive {% endblock %}
+{% block content %} 
 
 <!-- ##### Breadcrumb Area Start ##### -->
 <section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/41.jpg);">
@@ -32,7 +33,7 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <a href="../announcement/{{annon[0]}}" class="post-title">{{annon[1]}}</a>
+                                <a href="/announcement/{{annon[0]}}" class="post-title">{{annon[1]}}</a>
                             </div>
                         </div>
                     {% endfor %}
