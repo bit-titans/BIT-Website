@@ -65,6 +65,10 @@ auth_plugin='mysql_native_password'
 def contact():
    return render_template('contact.html')
 
+@app.route('/staff')
+def staff():
+   return render_template('staff_corner.html')
+
 @app.route('/getRes/<string:dept>/<string:res>')
 def Res(dept,res):
    if dept=='MAT':
