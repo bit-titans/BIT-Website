@@ -44,6 +44,15 @@ $(document).ready(function() {
     $("#2018b").click(()=>{window.open("/placement/Companies-dirng-2018.pdf",'_blank')});
     $("#2017b").click(()=>{window.open("/placement/Companies-dirng-2017-.pdf",'_blank')});
     $("#2016b").click(()=>{window.open("/placement/Companies-dirng-2016.pdf",'_blank')});
+    $(window).scroll(function() {
+      $('video').each(function() {
+          if ($(this).visible(true)) {
+              $(this)[0].play();
+          } else {
+              $(this)[0].pause();
+          }
+      })
+  });
     
   });
 

@@ -2476,3 +2476,17 @@ textarea.form-control {
   .modal-backdrop {
     z-index: -1;
   }
+
+.mob-logo{
+  visibility: hidden;
+}
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .bit-header{
+      display: none;
+    }
+    .mob-logo{
+      visibility: visible;
+    }
+  }
+
