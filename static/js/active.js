@@ -35,7 +35,7 @@
             navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
             dots: false,
             autoplay: true,
-            autoplayTimeout: 5000,
+            autoplayTimeout: 15000,
             smartSpeed: 1000
         });
 
