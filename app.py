@@ -183,6 +183,13 @@ def Res(dept,res):
          return render_template('sport_comp.html')
       if res=='event':
          return render_template('sport_evn.html')
+   if dept=="HOME":
+      if res=="audit":
+         return render_template('audit.html')
+      if res=="policies":
+         return render_template('policies.html')
+      if res=="mandatory":
+         return render_template('mandatory.html')
 
 @app.route('/announcement/<id>')
 def announcement(id):
