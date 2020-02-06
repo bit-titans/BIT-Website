@@ -1,3 +1,5 @@
+# TODO: Add flask cache
+
 from flask import Flask,render_template
 import math
 app = Flask(__name__)
